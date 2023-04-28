@@ -477,6 +477,10 @@ a:hover {
 }
 
 .st-dark-bg {
+  background-color: #000000;
+}
+
+.st-dark1-bg {
   background-color: #070d1b;
 }
 
@@ -919,6 +923,7 @@ hr {
   position: relative;
   height: 710px;
   background-color: #070d1b;
+  background-image: url("../img/background/main.jpg");
 }
 
 .st-hero-wrap img {
