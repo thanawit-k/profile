@@ -215,7 +215,12 @@
         msg = $.trim(msg);
 
         if (name != '' && email != '' && msg != '') {
-          console.log(process.env.SMTP_PASS);
+          const sss = getPASS(process.env.SMTP_PASS);
+          console.log(sss);
+          const MY_VARIABLE = window.SMTP_PASS || 'false';
+
+          console.log(MY_VARIABLE);
+
           Email.send({
             Host : "smtp.elasticemail.com",
             Username : "kt.thanawit@gmail.com",
@@ -238,6 +243,9 @@
         return false;
       });
     }
+  }
+  function getPASS(myVariable) {
+    return myVariable
   }
 
 
