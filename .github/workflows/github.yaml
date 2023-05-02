@@ -1,10 +1,6 @@
 name: 'e2e'
 on:
   push:
-    branches:
-      - main
-      - 'releases/*'
-
 jobs:
   test-exclude:
     runs-on: ubuntu-latest
