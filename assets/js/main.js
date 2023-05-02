@@ -253,7 +253,7 @@
           //   $('#st-alert').fadeIn().html('<div class="alert alert-success"><strong>Success!</strong> Email has been sent successfully.</div>');
           // }).catch((err) => {
           //   $('#st-alert').fadeIn().html(`<div class="alert alert-danger"><strong>Warning!</strong> ${err}</div>`);
-          // });
+          });
         } else {
           $('#st-alert').fadeIn().html('<div class="alert alert-danger"><strong>Warning!</strong> All fields are required.</div>');
         }
