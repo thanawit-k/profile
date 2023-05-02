@@ -1,9 +1,11 @@
+name: Secrets example
+on: push
 jobs:
-  my-job:
+  job1:
     runs-on: ubuntu-latest
     steps:
-      - name: My step
-        env:
+      - name: Test
+        env: 
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
