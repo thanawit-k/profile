@@ -215,15 +215,13 @@
         msg = $.trim(msg);
 
         if (name != '' && email != '' && msg != '') {
-  
-          const MY_VARIABLE = window.SMTP_PASS || 'false';
-
-          console.log(MY_VARIABLE);
+          const SMTP_USER = '<?php echo getenv("SMTP_USER"); ?>';
+          const SMTP_PASS = '<?php echo getenv("SMTP_PASS"); ?>';
 
           Email.send({
             Host : "smtp.elasticemail.com",
-            Username : "kt.thanawit@gmail.com",
-            Password : "885669943C0E6E1C29DA82F89EEE519C65CB",
+            Username : SMTP_USER,
+            Password : SMTP_PASS,
             port : 2525,
             To: "tunnie0409.tk@gmail.com",
             From: "kt.thanawit@gmail.com",
@@ -242,9 +240,6 @@
         return false;
       });
     }
-  }
-  function getPASS(myVariable) {
-    return myVariable
   }
 
 
