@@ -9,9 +9,4 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
-          echo "$SMTP_USER"
-      - name: Make envfile
-        with:
-          envkey_DEBUG: false
-          envkey_SMTP_USER: ${{ secrets.SMTP_USER }}
-          file_name: .env
+          echo "$SMTP_PASS"
