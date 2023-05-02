@@ -435,6 +435,14 @@
   <script src="assets/js/ripples.min.js"></script>
   <script src="assets/js/particles.min.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+      $(document).ready(function() {
+        const SMTP_USER = '<?php echo getenv("SMTP_USER"); ?>';
+        const SMTP_PASS = '<?php echo getenv("SMTP_PASS"); ?>';
+        console.log(SMTP_USER);
+        console.log(SMTP_PASS);
+      });
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 
