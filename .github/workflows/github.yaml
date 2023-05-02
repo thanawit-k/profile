@@ -9,4 +9,4 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
-          echo "$SMTP_USER
+          echo "$SMTP_USER"
