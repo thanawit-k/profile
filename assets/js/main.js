@@ -215,8 +215,7 @@
         msg = $.trim(msg);
 
         if (name != '' && email != '' && msg != '') {
-          const sss = getPASS(process.env.SMTP_PASS);
-          console.log(sss);
+  
           const MY_VARIABLE = window.SMTP_PASS || 'false';
 
           console.log(MY_VARIABLE);
