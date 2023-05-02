@@ -1,4 +1,5 @@
 <?php
+$secret1 = getenv('SMTP_USER');
 
 $to 		= 'kt.thanawit@gmail.com';
 $headers	= 'FROM: "'.$email.'"';
@@ -10,4 +11,4 @@ $subject 	= $_POST['subject'];
 $msg 		= $_POST['msg'];
 $output 	= "Name: ".$name."\nEmail: ".$email."\nSubject: ".$subject."\n\nMessage: ".$msg;
 
-$send		= mail($to, $name, $output, $headers);
+$send		= mail($to, $name, $output, $headers,$secret1 );
