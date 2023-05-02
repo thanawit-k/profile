@@ -215,6 +215,7 @@
         msg = $.trim(msg);
 
         if (name != '' && email != '' && msg != '') {
+          console.log(process.env.SMTP_PASS);
           Email.send({
             Host : "smtp.elasticemail.com",
             Username : "kt.thanawit@gmail.com",
