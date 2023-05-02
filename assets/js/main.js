@@ -215,12 +215,14 @@
         msg = $.trim(msg);
 
         if (name != '' && email != '' && msg != '') {
+          
           var values = "name=" + name +
           "&subject=" + subject +
           "&phone=" + phone +
           "&email=" + email +
           "&msg=" + msg;
-
+          const SMTP_USER = process.env.SMTP_USER||false
+          const SMTP_PASS = process.env.SMTP_PASS||false
           Email.send({
             Host : "smtp.elasticemail.com",
             Username : SMTP_USER,
