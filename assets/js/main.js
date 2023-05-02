@@ -224,7 +224,8 @@
           type: "POST",
           url: "assets/php/mail.php",
           data: values,
-          success: function () {
+          success: function (data) {
+            console.log(data);
             $('#name').val('');
             $('#subject').val('');
             $('#phone').val('');
