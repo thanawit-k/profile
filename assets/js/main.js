@@ -215,27 +215,21 @@
         msg = $.trim(msg);
 
         if (name != '' && email != '' && msg != '') {
-          var values = "name=" + name +
-            "&subject=" + subject +
-            "&phone=" + phone +
-            "&email=" + email +
-            "&msg=" + msg;
-          $.ajax({
-            type: "POST",
-            url: "assets/php/mail.php",
-            data: values,
-            success: function () {
-              $('#name').val('');
-              $('#subject').val('');
-              $('#phone').val('');
-              $('#email').val('');
-              $('#msg').val('');
-
-              $('#st-alert').fadeIn().html('<div class="alert alert-success"><strong>Success!</strong> Email has been sent successfully.</div>');
-              setTimeout(function () {
-                $('#st-alert').fadeOut('slow');
-              }, 4000);
-            }
+          Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "kt.thanawit@gmail.com",
+            Password : "885669943C0E6E1C29DA82F89EEE519C65CB",
+            port : 2525,
+            To: "tunnie0409.tk@gmail.com",
+            From: "kt.thanawit@gmail.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+          }).then(()=>{
+            $('#submit').prop("disabled",true);
+            $('#submit').css({"background-color":"gray","color":"white"});
+            $('#st-alert').fadeIn().html('<div class="alert alert-success"><strong>Success!</strong> Email has been sent successfully.</div>');
+          }).catch((err) => {
+            $('#st-alert').fadeIn().html(`<div class="alert alert-danger"><strong>Warning!</strong> ${err}</div>`);
           });
         } else {
           $('#st-alert').fadeIn().html('<div class="alert alert-danger"><strong>Warning!</strong> All fields are required.</div>');
