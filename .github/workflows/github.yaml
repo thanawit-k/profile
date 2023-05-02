@@ -1,12 +1,21 @@
 name: resume
 on: push
 jobs:
-  job1:
+  test-exclude:
     runs-on: ubuntu-latest
     steps:
-      - name: Test
-        env: 
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      - uses: actions/checkout@v3
+      - name: Export secrets to env variables (with exclude)
+        uses: ./
+        with:
+          secrets: ${{ toJSON(secrets) }}
+          exclude: non-existent,SECRET_2
+        env:
+          SMTP_USER: 1234 # Should show override warning
+      - name: Verify secrets to env variables (with exclude)
         run: |
-          echo "$SMTP_USER"
+          [[ "${SECRET_1}" != "VALUE_1" ]] && echo "Could not export SECRET_1 secret, value is ${SECRET_1}" && exit 1
+          [[ "${SECRET_2}" != "" ]] && echo "SECRET_2 should be unset, got ${SECRET_2}" && exit 1
+          [[ "${SECRET_3}" != "VALUE_3" ]] && echo "Could not export SECRET_3 secret, value is ${SECRET_3}" && exit 1
+          true
+        shell: bash
