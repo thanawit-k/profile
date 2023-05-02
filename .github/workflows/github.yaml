@@ -15,5 +15,3 @@ jobs:
           envkey_DEBUG: false
           envkey_SMTP_USER: ${{ secrets.SMTP_USER }}
           file_name: .env
-        run: |
-          echo "Value of MY_SECRET1: $SMTP_USER"
