@@ -215,8 +215,6 @@
         msg = $.trim(msg);
 
         if (name != '' && email != '' && msg != '') {
-          const mySecretValue = process.env.SMTP_USER||"false";
-          console.log(mySecretValue);
           var values = "name=" + name +
           "&subject=" + subject +
           "&phone=" + phone +
