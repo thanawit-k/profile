@@ -1,4 +1,4 @@
-name: Secrets example
+name: resume
 on: push
 jobs:
   job1:
