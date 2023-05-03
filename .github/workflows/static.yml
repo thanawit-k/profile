@@ -39,8 +39,8 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
           touch test.js
-          echo const SMTP_USER=`$SMTP_USER;` >> test.js
-          echo const SMTP_PASS=`$SMTP_PASS;` >> test.js
+          echo const SMTP_USER=`${{ secrets.SMTP_USER }};` >> test.js
+          echo const SMTP_PASS=`${{ secrets.SMTP_PASS }};` >> test.js
           echo "ls -a ."
           echo "cat test.js"
           cat test.js
