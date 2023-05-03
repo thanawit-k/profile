@@ -39,12 +39,12 @@ jobs:
           # Upload entire repository
           path: '.'
       - name: Test
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
         env: 
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
           echo -e "SMTP_USER = $SMTP_USER\nSMTP_PASS = $SMTP_PASS" > test.js
           ls
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
