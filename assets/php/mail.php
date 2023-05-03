@@ -1,8 +1,6 @@
 <?php
-$secret1 = getenv('SMTP_USER');
-$to = "tunnie0409.tk@gmail.com";
-$subject = "My subject";
-$txt = "Hello world!";
-$headers = "From: kt.thanawit@gmail.com" . "\r\n";
-echo $secret1;
+$SMTP_PASS = getenv('SMTP_PASS')|false;
+$SMTP_USER = getenv('SMTP_USER')|false;
+
+echo $SMTP_USER;
 ?>
