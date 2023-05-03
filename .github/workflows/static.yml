@@ -35,12 +35,12 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Create Keys
         env:
-          SMTP_USER: "1234"
-          SMTP_PASS: "5667"
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
           touch test.js
-          echo SMTP_USER="$SMTP_USER" >> test.js
-          echo SMTP_PASS="$SMTP_PASS" >> test.js
+          echo SMTP_USER=$SMTP_USER >> test.js
+          echo SMTP_PASS=$SMTP_PASS >> test.js
           echo "ls -a ."
           echo "cat test.js"
           cat test.js
