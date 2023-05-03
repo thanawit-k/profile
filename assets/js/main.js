@@ -38,8 +38,6 @@
     $(window).trigger("scroll");
     $(window).trigger("resize");
     preloaderSetup();
-    console.log(SMTP_USER);
-    console.log(SMTP_PASS);
   });
 
   $(document).on("ready", function () {
