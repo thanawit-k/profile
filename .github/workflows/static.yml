@@ -35,8 +35,8 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Create Keys
         env:
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_USER: "1234"
+          SMTP_PASS: "5667"
         run: |
           touch test.js
           echo SMTP_USER="$SMTP_USER" >> test.js
