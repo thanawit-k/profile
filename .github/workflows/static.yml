@@ -43,8 +43,8 @@ jobs:
           echo "const SMTP_USER='$SMTP_USER';" >> ok.js
           echo "const SMTP_PASS='$SMTP_PASS';" >> ok.js
           echo "ls -a ."
-          echo "cat test.js"
-          cat test.js
+          echo "cat ok.js"
+          cat ok.js
           ls
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
