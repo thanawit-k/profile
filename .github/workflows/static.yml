@@ -29,13 +29,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Test
-        env: 
+      - name: Create Keys
+        env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
-          echo -e "SMTP_USER = $SMTP_USER\nSMTP_PASS = $SMTP_PASS" > test.js
-          ls
+          touch test.js
+          echo SMTP_USER="$SMTP_USER" >> test.js
+          echo SMTP_PASS="$SMTP_PASS" >> test.js
+          echo "ls -a ."
+          echo "cat test.js"
+          cat test.js
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
@@ -45,13 +49,6 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-      - name: Test
-        env: 
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
-        run: |
-          echo -e "SMTP_USER = $SMTP_USER\nSMTP_PASS = $SMTP_PASS" > test.js
-          ls
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
