@@ -1,7 +1,3 @@
-// const SMTP_USER = process.env.SMTP_USER||false
-// const SMTP_PASS = process.env.SMTP_PASS||false
-// console.log(SMTP_USER);
-// console.log(SMTP_PASS);
 (function ($) {
 
   "use strict";
@@ -42,16 +38,8 @@
     $(window).trigger("scroll");
     $(window).trigger("resize");
     preloaderSetup();
-    $.ajax({
-			type: "GET",
-      crossDomain: true,
-      headers: {  'Access-Control-Allow-Origin': '*' },
-			url: "../php/mail.php",
-			success: function (data) {
-        console.log(data);
-			},
-			async: false
-		});
+    console.log(SMTP_USER);
+    console.log(SMTP_PASS);
   });
 
   $(document).on("ready", function () {
