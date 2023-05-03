@@ -44,7 +44,9 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
           echo "$SMTP_USER"
+          ls
           cd assets/js && echo -e "const SMTP_USER = '$SMTP_USER';\nconst SMTP_PASS = '$SMTP_PASS';" > test.js
+          ls
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
