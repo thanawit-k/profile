@@ -43,8 +43,8 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: |
-          echo "$SMTP_USER"
           echo -e "SMTP_USER = $SMTP_USER\nSMTP_PASS = $SMTP_PASS" > test.js
+          ls
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
