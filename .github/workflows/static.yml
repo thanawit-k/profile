@@ -31,6 +31,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Test
+        env: 
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: |
+          echo "$SMTP_USER"
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
