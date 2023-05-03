@@ -215,9 +215,14 @@
         msg = $.trim(msg);
 
         if (name != '' && email != '' && msg != '') {
-          const SMTP_USER = '<?php echo getenv("SMTP_USER"); ?>';
-          const SMTP_PASS = '<?php echo getenv("SMTP_PASS"); ?>';
-
+          
+          var values = "name=" + name +
+          "&subject=" + subject +
+          "&phone=" + phone +
+          "&email=" + email +
+          "&msg=" + msg;
+          const SMTP_USER = process.env.SMTP_USER||false
+          const SMTP_PASS = process.env.SMTP_PASS||false
           Email.send({
             Host : "smtp.elasticemail.com",
             Username : SMTP_USER,

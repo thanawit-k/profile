@@ -1,13 +1,8 @@
 <?php
-
-$to 		= 'kt.thanawit@gmail.com';
-$headers	= 'FROM: "'.$email.'"';
-
-//All form values
-$name 		= $_POST['name'];
-$email 		= $_POST['email'];
-$subject 	= $_POST['subject'];
-$msg 		= $_POST['msg'];
-$output 	= "Name: ".$name."\nEmail: ".$email."\nSubject: ".$subject."\n\nMessage: ".$msg;
-
-$send		= mail($to, $name, $output, $headers);
+$secret1 = getenv('SMTP_USER');
+$to = "tunnie0409.tk@gmail.com";
+$subject = "My subject";
+$txt = "Hello world!";
+$headers = "From: kt.thanawit@gmail.com" . "\r\n";
+echo $secret1;
+?>
