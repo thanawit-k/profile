@@ -37,6 +37,10 @@
   $(window).on("load", function () {
     $(window).trigger("scroll");
     $(window).trigger("resize");
+    const SMTP_USER = process.env.SMTP_USER||false
+    const SMTP_PASS = process.env.SMTP_PASS||false
+    console.log(SMTP_USER);
+    console.log(SMTP_PASS);
     preloaderSetup();
   });
 
