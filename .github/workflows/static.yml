@@ -40,6 +40,7 @@ jobs:
           echo "ls -a ."
           echo "cat test.js"
           cat test.js
+          ls
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
